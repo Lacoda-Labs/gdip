@@ -14,6 +14,9 @@ The GeoDistricts DAO operates as a Wyoming DAO LLC under Wyoming's 2023 DAO law,
 ## Token Governance ($GEOD)
 
 ### Token Parameters
+- **[Token Specification](../dao/contracts/TOKEN_SPEC.md)**: Complete $GEOD token contract and governance implementation
+- **[Token Launch](../dao/contracts/TOKEN_LAUNCH.md)**: Deployment strategy and initial distribution
+- **[Airdrop Specification](../dao/contracts/AIRDROP_SPEC.md)**: Fair launch and community distribution mechanics
 - **Total Supply**: 100M $GEOD (fixed, no inflation)
 - **Voting Mechanism**: Quadratic voting (vote power = √tokens held)
 - **Utility**: Governance rights, proposal creation, treasury access
@@ -48,12 +51,14 @@ The GeoDistricts DAO operates as a Wyoming DAO LLC under Wyoming's 2023 DAO law,
   - Community Delegate (Outreach, education, partnerships)
   - Treasury Delegate (Financial management, yield optimization)
 - Serve 6-month terms with community recall option
+- **[Detailed Delegate System](../dao/governance/DELEGATE_ELECTIONS.md)**: Election process, responsibilities, and term management
 
 #### Working Groups
 - **Protocol WG**: GDIP development and protocol improvements
 - **Development WG**: Reference implementation and tooling
 - **Treasury WG**: Financial management and grant programs
 - **Community WG**: Education, outreach, and ecosystem growth
+- **[Working Group Framework](../dao/governance/WORKING_GROUPS.md)**: Formation, operations, and accountability
 
 #### Emergency Council
 - 3-5 member multi-sig for critical security/timing decisions
@@ -75,6 +80,7 @@ The GeoDistricts DAO operates as a Wyoming DAO LLC under Wyoming's 2023 DAO law,
 - **Emergency Spending**: Rapid response to critical needs
 
 #### Operational Decisions
+- **[Proposal Templates](../dao/governance/PROPOSAL_TEMPLATES.md)**: Standardized templates for governance proposals
 - **Working Group Formation**: Creating new specialized committees
 - **Delegate Elections**: Community voting for representative positions
 - **Partnership Agreements**: Strategic collaborations and integrations
@@ -89,6 +95,8 @@ The GeoDistricts DAO operates as a Wyoming DAO LLC under Wyoming's 2023 DAO law,
 
 ## Treasury Management
 
+**[Treasury Management Framework](../dao/treasury/TREASURY_MANAGEMENT.md)**: Comprehensive treasury strategy and operations
+
 ### Treasury Structure
 - **Primary Assets**: ETH, stablecoins (USDC, DAI), $GEOD
 - **Diversification**: 60% stablecoins, 30% ETH/staking, 10% DeFi yields
@@ -96,15 +104,17 @@ The GeoDistricts DAO operates as a Wyoming DAO LLC under Wyoming's 2023 DAO law,
 - **Budget Cycles**: Quarterly budget proposals with spending limits
 
 ### Treasury Operations
-- **Yield Optimization**: ETH staking, liquidity provision in audited pools, treasury management protocols
+- **[Yield Strategies](../dao/treasury/YIELD_STRATEGIES.md)**: Sustainable yield generation and risk management
 - **Grant Programs**: Retroactive funding rounds, quadratic funding for ecosystem projects
 - **Emergency Fund**: 5-10% reserve for security incidents or legal defense
 - **Reporting**: Monthly treasury reports, quarterly audits, public dashboards
 
 ## Contributor Compensation
 
+**[Contributor Programs Framework](../dao/compensation/CONTRIBUTOR_PROGRAMS.md)**: Comprehensive compensation and incentives
+
 ### Compensation Mechanisms
-- **Retroactive Funding**: Monthly rounds rewarding past contributions (Optimism-style)
+- **[Retroactive Funding](../dao/compensation/RETROACTIVE_FUNDING.md)**: Monthly rounds rewarding past contributions (Optimism-style)
 - **Grant Programs**: Open applications for development, research, marketing
 - **Quadratic Funding**: Community-directed funding for public goods
 - **Bounty System**: Task-based rewards for specific deliverables
@@ -119,11 +129,12 @@ The GeoDistricts DAO operates as a Wyoming DAO LLC under Wyoming's 2023 DAO law,
 ## Risk Management
 
 ### Security Measures
-- **Smart Contract Audits**: Multiple independent audits for all contracts
+- **[Security Audit Program](../dao/security/SECURITY_AUDITS.md)**: Comprehensive audit framework and procedures
 - **Multi-sig Security**: Hardware wallets, air-gapped signing, emergency procedures
 - **Bug Bounty Program**: Ongoing incentives for security researchers
 
 ### Insurance Coverage
+- **[Insurance Coverage Framework](../dao/security/INSURANCE_COVERAGE.md)**: Comprehensive risk protection strategy
 - **Cyber Insurance**: Smart contract exploits and treasury losses
 - **Governance Insurance**: Protection against governance attacks
 - **Legal Insurance**: Defense coverage for regulatory actions
@@ -134,6 +145,10 @@ The GeoDistricts DAO operates as a Wyoming DAO LLC under Wyoming's 2023 DAO law,
 - **Succession Planning**: Clear procedures for leadership transitions
 
 ## Transparency and Accountability
+
+**[Transparency Reporting Framework](../dao/transparency/TRANSPARENCY_REPORTING.md)**: Community reporting and accountability
+
+**[Community Engagement Strategy](../dao/transparency/COMMUNITY_ENGAGEMENT.md)**: Building and maintaining community participation
 
 ### Communication Channels
 - **Governance Forum**: Discourse for proposal discussion
@@ -148,6 +163,8 @@ The GeoDistricts DAO operates as a Wyoming DAO LLC under Wyoming's 2023 DAO law,
 - **Audit Reports**: Regular smart contract and financial audits
 
 ### Success Metrics
+- **[KPI Framework](../dao/ecosystem/KPI_FRAMEWORK.md)**: Comprehensive success metrics and evaluation
+- **[Ecosystem Scaling](../dao/ecosystem/ECOSYSTEM_SCALING.md)**: Growth strategy and expansion roadmap
 - **Participation Rate**: Target 10-20% of token holders voting regularly
 - **Treasury Growth**: Annual return on treasury assets
 - **GDIP Submissions**: Number of community-proposed improvements

@@ -16,6 +16,18 @@ Implementers can adopt the protocol independently. This repo is specification an
 |------|----------|
 | [GDIPs/](GDIPs/) | Numbered spec files (gdip-001 through gdip-006) and index |
 | [process/](process/) | GDIP process, template, governance |
+| [dao/](dao/) | DAO governance, treasury, compensation, and ecosystem documents |
+
+## DAO Governance
+
+The GeoDistricts Protocol includes a comprehensive DAO framework for decentralized governance of the protocol and ecosystem:
+
+- **[DAO Governance](process/GOVERNANCE.md)** — Complete governance structure and token model
+- **[Delegate Elections](dao/governance/DELEGATE_ELECTIONS.md)** — Elected representatives and oversight
+- **[Working Groups](dao/governance/WORKING_GROUPS.md)** — Specialized committees and operations
+- **[Treasury Management](dao/treasury/TREASURY_MANAGEMENT.md)** — Financial strategy and yield optimization
+- **[Contributor Programs](dao/compensation/CONTRIBUTOR_PROGRAMS.md)** — Compensation and incentives
+- **[Security Framework](dao/security/SECURITY_AUDITS.md)** — Audit program and insurance coverage
 
 ## Protocol version and releases
 
