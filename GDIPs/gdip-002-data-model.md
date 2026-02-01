@@ -75,7 +75,7 @@ Implementers and tooling (including LLM-generated code) need a single, clear dat
 
 ## Reference Implementation
 
-- [doc/pages/GeodistrictingAlgorithmSpecification.md](https://github.com/Lacoda-Labs/geodistricts/blob/main/doc/pages/GeodistrictingAlgorithmSpecification.md) — Implementation Notes, Data Structures.  
+- [GeodistrictingAlgorithmSpecification.md](../GeodistrictingAlgorithmSpecification.md) — Implementation Notes, Data Structures.  
 - [doc/pages/ARCHITECTURE_DETAILS.md](https://github.com/Lacoda-Labs/geodistricts/blob/main/doc/pages/ARCHITECTURE_DETAILS.md) — Database schema and core tables.
 
 ## References

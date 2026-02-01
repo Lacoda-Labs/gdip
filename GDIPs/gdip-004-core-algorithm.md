@@ -64,7 +64,7 @@ Implementers and tooling need a single, unambiguous specification so that geodis
 
 ## Reference Implementation
 
-- [doc/pages/GeodistrictingAlgorithmSpecification.md](https://github.com/Lacoda-Labs/geodistricts/blob/main/doc/pages/GeodistrictingAlgorithmSpecification.md) (full spec).  
+- [GeodistrictingAlgorithmSpecification.md](../GeodistrictingAlgorithmSpecification.md) (full spec).  
 - [doc/GeoDistrictsProjectOverview.md](https://github.com/Lacoda-Labs/geodistricts/blob/main/doc/GeoDistrictsProjectOverview.md) (overview).  
 - Backend: `backend/services/geodistrict-algorithm.js` and `backend/services/latlong-division.js` (or equivalent in reference implementation).
 
