@@ -32,6 +32,24 @@ Implementers and tooling need a single, unambiguous specification so that geodis
 1. **Initialize**: Fetch all census tracts for the state; compute total state population (sum of tract populations); compute target population per district = total state population / number of districts; set max allowed variance (e.g. 1% of target). Initialize one district group containing all tracts.
 2. **Lat/long division**: Repeat until each group has 1 district: (a) Select the group with the most districts (tie-break: largest population). (b) If the group has 1 district, skip. (c) Compute split: if even number of districts, split 50/50; if odd, split (n−1)/2 and (n+1)/2. (d) Sort tracts geographically by alternating latitude/longitude boundaries (e.g. iteration 1: south boundary for latitude, iteration 2: east boundary for longitude). (e) Accumulate tract populations until ≥ target for the first sub-group; split at tract boundary (do not split individual tracts). (f) Keep enclosed tracts with their enclosing tracts. (g) Create new district groups with updated start/end district numbers and populations.
 3. **Contiguity management**: For each division result: (a) Detect isolated tracts using adjacency data. (b) Move isolated tracts to adjacent connected groups while maintaining population balance. (c) Handle bridge tracts that connect isolated components.
+
+3.1 Isolated Tracts
+Due to oddly shaped census tracts, sorting tracts by a polar coordinate (e.g. south, east) can lead to one or many tracts being isolated from the other tracts in the newly divided district group. 
+(todo: add figure showing isolation due to south sorting)
+3.1.1 Allowed Isolated Tracts
+In cases where isolation is due to geographic barriers, e.g. islands, forrest, parks, the tracts (or groups of tracts) should be identified as such and allowed to be discontigous.  
+Further, a census tract can be entirely enclosed within another tract, (i.e. a donut hole tract) and should be treated as part of the enclosing tract in order to maintain contiguity. Otherwise, during sorting and subsequent division an enclosed tract can be separated due to a distant polar coordinate resulting in the donut hole tract being in another district. Grouping enclosed tracts with their parent tracts prevents this discontigous separation across districts.
+These tracts should be detected during initial step 0 and identified with properties at the tract level.
+3.2 Isolated Tract Detection
+Isolation detection is determined by shared polygon coordinates (e.g. S4 adjacency data) and calculating total reachable number of tracts starting with first tract in each division of the sorted parent district group tracts. Total number of reachable tracts should exclude allowed isolated tracts detected during initial step 0.
+After first iteration beginning with first sorted tract, an adjacency group is created. Continue to iterate on any remaining tracts outside an established adjacency groups until all tracts have been included in an adjacency group. Allowed isolated tracts should also be added to adjacency groups. The adjecency group with most tracts is considered the primary adjaceny group. All adjecency groups not allowed or primary are considered isolated. 
+3.3 Isolated Tract Resolution
+The general approach for resolving isolated tracts is to move tracts to the sibling district group (DG). There are two ways to move tracts to sibling DG that change adjecency and therefore adjacency groups.
+3.3.1 Bridge Tracts
+3.3.2 Sibling Tract Swap
+
+
+
 4. **Validation and output**: Compute per-district population variance and (optionally) contiguity score; output list of districts with tract GEOIDs and population; log variances and any discontiguous districts.
 
 ### 4. Geographic sorting
