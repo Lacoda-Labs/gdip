@@ -15,7 +15,7 @@ Implementers and tooling (including LLM-generated code) need a single, clear dat
 
 ## Specification
 
-### 1. Geographic and administrative identifiers
+### 1. Geographic identifier (primary key)
 
 - **State**: Identified by 2-letter USPS abbreviation (e.g. `"AZ"`) or 2-digit FIPS code (e.g. `"04"`). Protocol uses state abbreviation in APIs; FIPS is acceptable in bulk/census contexts.
 - **County**: Identified by 5-digit FIPS code (state FIPS + county FIPS), e.g. `"04013"` (Maricopa County, AZ). No optional county name field in the protocol; implementers may add display names locally.
@@ -24,22 +24,30 @@ Implementers and tooling (including LLM-generated code) need a single, clear dat
 ### 2. Core entities
 
 **Census tract (input)**  
+
+The census tract is the core entity used by the geodistrict algorithm. Census tracts are grouped together such that the state is divided equally by population into the number of apportioned U.S. Congressional seats.
+
 - `geoid` (string, required): 11-digit GEOID.  
 - `population` (number, required): Total population for the tract (decennial or ACS source per GDIP-003).  
-- `geometry` (optional for protocol spec): Geographic boundary (e.g. GeoJSON). Protocol algorithm uses tract identity and population; geometry is required for boundary output and visualization (see reference implementation).
+- `geometry` (GeoJSON, required): Geographic boundary of census tract.  
 
-**County (derived or input)**  
+The geodistricts protocol algorithm uses tract identity, population and geometry. All are required for boundary output and visualization (see reference implementation).
+
+**County (input)**  
+
 - `fips` (string, required): 5-digit FIPS.  
 - `population` (number, required): Sum of tract populations in the county.  
 - `tracts` (array of tract identifiers or tract objects, as needed for algorithm).
 
 **District group (algorithm intermediate)**  
+
 - `startDistrictNumber`, `endDistrictNumber` (integers): Range of district indices (1-based) assigned to this group.  
 - `counties` / `tracts`: Counties or tracts belonging to this group.  
 - `totalPopulation` (number): Sum of population in the group.  
 - `bounds` (optional): Geographic bounds; `centroid` (optional): Center point. Used for sorting and visualization.
 
 **Geodistrict (output)**  
+
 - `districtNumber` (integer, 1-based): District index within the state.  
 - `tracts` (array): List of GEOIDs or tract objects assigned to this district.  
 - `population` (number): Total population.  
@@ -81,3 +89,4 @@ Implementers and tooling (including LLM-generated code) need a single, clear dat
 - [GDIP-003: Required Data Sources](gdip-003-required-data-sources.md)  
 - [GDIP-004: Core Algorithm](gdip-004-core-algorithm.md)  
 - U.S. Census Bureau: [GEOID](https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html), [FIPS codes](https://www.census.gov/library/reference/code-lists/ansi/ansi-codes-for-states.html)
+
